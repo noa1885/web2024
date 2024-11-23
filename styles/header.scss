@@ -1,0 +1,14 @@
+@mixin text1{
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+    size: 90px;
+}
+$base-color: #3498db; // Blue
+$dark-color: darken($base-color, 15%); // Darker blue
+$light-color: lighten($base-color, 15%); // Lighter blue
+
+header{  
+    background: linear-gradient(to right, $dark-color, $base-color, $light-color);
+
+   @include text1;
+}

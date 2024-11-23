@@ -1,0 +1,72 @@
+@import "header.scss";
+$link-color: #808080;
+$link-hover-opacity: 0.7;
+
+@mixin ul{
+   color: #808080;
+    text-decoration: none;
+
+   
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    a {
+      @include ul(); 
+    }
+    button {
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;  
+        cursor: pointer;
+        opacity: 2;      
+        &:hover {
+          opacity: $link-hover-opacity;
+        }
+      }
+}  
+
+$color-warning: #f0ad4e;
+$color-info: #5bc0de;
+$color-danger: #d9534f;
+$color-success: #5cb85c;
+
+$color-light-warning: lighten($color-warning, 50%);
+$color-light-info: lighten($color-info, 50%);
+$color-light-danger: lighten($color-danger, 50%);
+$color-light-success: lighten($color-success, 50%);
+@for $i from 1 through 12 {
+    .column-#{$i} {
+        width: (100% / 12) * $i;
+        float: left; // מאפשר פריסה בשורה
+    }
+}
+
+.text-info {
+    color: $color-info;
+    background-color: $color-light-info;
+    font-weight: normal;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    cursor: help;  // סמן סימן שאלה
+  }
+  
+  .text-danger {
+    color: $color-danger;
+    background-color: $color-light-danger;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    cursor: pointer;  // סמן יד
+  }
+  
+  .text-success {
+    color: $color-success;
+    background-color: $color-light-success;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    cursor: pointer;  // סמן יד
+  }
+
+
